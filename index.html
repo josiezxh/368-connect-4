@@ -8,6 +8,45 @@
 
 <body>
     <h1>Connect 4</h1>
-    <script src="connect4.js"></script>
+  <!--<canvas id="board" width="400" height="400" style="border: 1px solid black;"></canvas>--> 
+   <svg id="gamesvg" width="700" height="700" style="border: solid 3px black;">
+       <!--horizontal lines-->
+       <line x1="0" y1="100" x2="700" y2="100" style="stroke: black;stroke-width:2;"></line>
+       <line x1="0" y1="200" x2="700" y2="200" style="stroke: black;stroke-width:1;"></line>
+       <line x1="0" y1="300" x2="700" y2="300" style="stroke: black;stroke-width:1;"></line>
+       <line x1="0" y1="400" x2="700" y2="400" style="stroke: black;stroke-width:1;"></line>
+       <line x1="0" y1="500" x2="700" y2="500" style="stroke: black;stroke-width:1;"></line>
+       <line x1="0" y1="600" x2="700" y2="600" style="stroke: black;stroke-width:1;"></line>
+       <!--vertical lines-->
+       <line x1="100" y1="100" x2="100" y2="700" style="stroke: black;stroke-width:1;"></line>
+       <line x1="200" y1="100" x2="200" y2="700" style="stroke: black;stroke-width:1;"></line>
+       <line x1="300" y1="100" x2="300" y2="700" style="stroke: black;stroke-width:1;"></line>
+       <line x1="400" y1="100" x2="400" y2="700" style="stroke: black;stroke-width:1;"></line>
+       <line x1="500" y1="100" x2="500" y2="700" style="stroke: black;stroke-width:1;"></line>
+       <line x1="600" y1="100" x2="600" y2="700" style="stroke: black;stroke-width:1;"></line>
+           <circle cx="50" cy="50" r="40" stroke="red" fill="red">
+               <animate attributeName="cy" from="50" to="150" dur="1s" begin="click" fill="freeze"/>
+           </circle>
+           <circle cx="150" cy="50" r="40" stroke="red" fill="red">
+            <animate attributeName="cy" from="50" to="250" dur="1s" begin="click" fill="freeze"/>
+            </circle>
+            <circle cx="250" cy="50" r="40" stroke="red" fill="red">
+                <animate attributeName="cy" from="50" to="350" dur="1s" begin="click" fill="freeze"/>
+            </circle>
+            <circle cx="350" cy="50" r="40" stroke="red" fill="red">
+             <animate attributeName="cy" from="50" to="450" dur="1s" begin="click" fill="freeze"/>
+             </circle>
+             <circle cx="450" cy="50" r="40" stroke="red" fill="red">
+                <animate attributeName="cy" from="50" to="550" dur="1s" begin="click" fill="freeze"/>
+            </circle>
+            <circle cx="550" cy="50" r="40" stroke="red" fill="red">
+             <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
+             </circle>
+             <circle cx="650" cy="50" r="40" stroke="red" fill="red">
+                <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
+                </circle>
+   </svg>
+   
 </body>
+<script src="connect4.js"></script>
 </html>

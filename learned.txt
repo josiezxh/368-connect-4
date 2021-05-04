@@ -1,1 +1,6 @@
-- how to add icon logo to title bar in html
+This is a list of things I had to look at notes, look up or learn:
+    - how to add icon logo to title bar in html
+    - svg components in html
+        - creating shapes: circles, lines
+        - <animate>
+    - create html element in js

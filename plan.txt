@@ -1,0 +1,14 @@
+To Do:
+    - have bone of page
+    - have disks drop when clicked
+    - have players and turns
+    - checker at end of each turn checks board for 4 in a row (both colors)
+    - reset button
+    - play x wins screen
+    ------^ Core Functionality ^------
+    ------v       polish       v------
+    - have column highlighted when hover
+    - have arrow above column being hovered
+    - fix up style
+    - add drop sound to disks
+    - add end game trumpet noise
