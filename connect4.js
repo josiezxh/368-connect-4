@@ -1,23 +1,17 @@
-var board = document.getElementById("board");
-var context = board.getContext("2d");
-var redDisk, blueDisk;
+let turn = true; // true when p1 turn, false when p2 turn.
 
-function startGame() {
-    myGameArea.start();
-    redPiece = new makeDisk(50,"red",70,75);
-  }
-  
+// boardArr keeps track of chip placement, each array is a column.
+// each array goes bottom to top, example, boardArr[0,0] is bottom of colA, boardArr[6,5] is top of colG.
+let boardArr = [[0,0,0,0,0,0], // colA
+                [0,0,0,0,0,0], // colB 
+                [0,0,0,0,0,0], // colC
+                [0,0,0,0,0,0], // colD
+                [0,0,0,0,0,0], // colE
+                [0,0,0,0,0,0], // colF
+                [0,0,0,0,0,0]];// colG
 
-function makeDisk(r,color, x, y) {
-    context.fillStyle = color;
-    context.beginPath();
-    context.arc(x, y, r, 0, 1.5*Math.PI);
-    context.stroke();
-    
-  }
+function playTurn(col){
+var disc = document.getElementById("#colA");
+disc.animate({})
 
-  function updateGameArea() {
-    myGameArea.clear();
-    myGamePiece.x += 1;
-    myGamePiece.update();
-  }
+}

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <link rel="stylesheet" href="connect4.css" />
-    <link rel="icon" href="assests/red4.png" type="image/icon type" /> 
+    <link type="text/css" rel="stylesheet" href="connect4.css" />
+    <link rel="icon" href="assests/red4.png" type="image/icon type" />
     <title>Connect 4</title>
 </head>
 
 <body>
     <h1>Connect 4</h1>
     <div class="turn">
-        It's <span class="playerTurn">Player 1's</span> turn
+        It's <span class="currentTurn">Player 1's</span> turn
+        
     </div>
+    
   <!--<canvas id="board" width="400" height="400" style="border: 1px solid black;"></canvas>--> 
+  <div>
    <svg id="gamesvg" width="700" height="700" style="border: solid 3px black;">
        <!--horizontal lines-->
        <line x1="0" y1="100" x2="700" y2="100" style="stroke: black;stroke-width:2;"></line>
@@ -28,29 +30,34 @@
        <line x1="400" y1="100" x2="400" y2="700" style="stroke: black;stroke-width:1;"></line>
        <line x1="500" y1="100" x2="500" y2="700" style="stroke: black;stroke-width:1;"></line>
        <line x1="600" y1="100" x2="600" y2="700" style="stroke: black;stroke-width:1;"></line>
-           <circle cx="50" cy="50" r="40" stroke="red" fill="red">
+
+            <circle class="ghost" id="colA" cx="50" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(1)">
                <animate attributeName="cy" from="50" to="150" dur="1s" begin="click" fill="freeze"/>
-           </circle>
-           <circle cx="150" cy="50" r="40" stroke="red" fill="red">
-            <animate attributeName="cy" from="50" to="250" dur="1s" begin="click" fill="freeze"/>
             </circle>
-            <circle cx="250" cy="50" r="40" stroke="red" fill="red">
+            <circle class="ghost" id="colB" cx="150" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(2)">
+                <animate attributeName="cy" from="50" to="250" dur="1s" begin="click" fill="freeze"/>
+            </circle>
+            <circle class="ghost" id="colC" cx="250" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(3)">
                 <animate attributeName="cy" from="50" to="350" dur="1s" begin="click" fill="freeze"/>
             </circle>
-            <circle cx="350" cy="50" r="40" stroke="red" fill="red">
+            <circle class="ghost" id="colD" cx="350" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(4)">
              <animate attributeName="cy" from="50" to="450" dur="1s" begin="click" fill="freeze"/>
-             </circle>
-             <circle cx="450" cy="50" r="40" stroke="red" fill="red">
+            </circle>
+            <circle class="ghost" id="colE" cx="450" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(5)">
                 <animate attributeName="cy" from="50" to="550" dur="1s" begin="click" fill="freeze"/>
             </circle>
-            <circle cx="550" cy="50" r="40" stroke="red" fill="red">
+            <circle class="ghost" id="colF" cx="550" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(6)">
              <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
-             </circle>
-             <circle cx="650" cy="50" r="40" stroke="red" fill="red">
+            </circle>
+            <circle class="ghost" id="colG" cx="650" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(7)">
                 <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
-                </circle>
-   </svg>
+            </circle>
+
+   </svg></div>
+
+   <button class="refresh" OnClick="location.reload()">Reset Game</button>
    
 </body>
 <script src="connect4.js"></script>
+<script src="snap.svg-min.js"></script>
 </html>
