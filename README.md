@@ -7,7 +7,7 @@ EECS368 | Spring2021
 - **Try it out [here](https://people.eecs.ku.edu/~j664h633/368-connect-4/index.html)**
 
 
-**Credits**
+### Credits
 - **Snap.svg**
     - http://snapsvg.io/
     - Copyright (c) 2013 – 2017 Adobe Systems Incorporated. All rights reserved.
