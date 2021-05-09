@@ -13,7 +13,7 @@ let boardArr = [[0,0,0,0,0,0], // colA
 
 function addToBoard(col){
   // set which column to be added to based on where user clicked
-  var i;
+  let i;
   if(col == "colA")
   {
     i = 0;
@@ -44,16 +44,17 @@ function addToBoard(col){
   }
 
   //set which player is placing
+  let player;
   if(turn)
   {
-    var player = 1;
+    player = 1;
   }
   else{
-    var player = 2;
+    player = 2;
   }
 
 
-var j;
+let j;
   //check to see what is already in arrays and add where it is empty.
   outerloop: for(j = 0; j < 6; j++)
   {
@@ -77,28 +78,354 @@ var j;
 }
 
 function winCheck(){
- return(false);
+  let inOrder = 0;
+
+  let value = 1;
+    //check vertically
+    for(let i=0; i < 7; i++) //col
+    {
+      for(let j=0; j<6; j++) //row
+      {
+        if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+
+        if(inOrder == 4)
+        {
+          return(true);
+        }
+      }
+    }
+
+    inOrder = 0;
+    //check horizontally
+    for(let i=0; i < 6; i++) //row
+    {
+      for(let j=0; j<7; j++) //col
+      {
+        if(boardArr[j][i] == value)
+        {
+          inOrder++;
+        }
+        else{
+          inOrder = 0;
+        }
+
+        if(inOrder == 4)
+        {
+          return(true);
+        }
+      }
+    }
+
+    inOrder = 0;
+    //check diagonal one
+    for(let i=0; i<6; i++)
+    {
+      if(boardArr[i][i] == value)
+        {
+          inOrder++;
+          console.log(boardArr[i][i]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+
+        if(inOrder == 4)
+        {
+          return(true);
+        }
+    }
+
+    inOrder = 0;
+    let j=1;
+    for(let i=0; i < 5; i++)
+    {
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j++;
+    }
+
+    inOrder = 0;
+    j=2;
+    for(let i=0; i < 4; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j++;
+    }
+
+    inOrder = 0;
+    j=0;
+    for(let i=1; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j++;
+    }
+
+    inOrder = 0;
+    j=0;
+    for(let i=2; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j++;
+    }
+
+    inOrder = 0;
+    j=0;
+    for(let i=3; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j++;
+    }
+
+    inOrder = 0;
+    j=5;
+    //check diagonal two
+    for(let i=0; i < 6; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+      {
+        inOrder++;
+        console.log(i);
+        console.log(j);
+        console.log(boardArr[i][j]);
+      }
+      else{
+        inOrder = 0;
+        console.log("erased");
+      }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+    inOrder = 0;
+    j=4;
+    for(let i=0; i < 5; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+      {
+        inOrder++;
+        console.log(i);
+        console.log(j);
+        console.log(boardArr[i][j]);
+      }
+      else{
+        inOrder = 0;
+        console.log("erased");
+      }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+    inOrder = 0;
+    j=4;
+    for(let i=0; i < 4; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+    inOrder = 0;
+    j=5;
+    for(let i=1; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+      {
+        inOrder++;
+        console.log(i);
+        console.log(j);
+        console.log(boardArr[i][j]);
+      }
+      else{
+        inOrder = 0;
+        console.log("erased");
+      }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+    inOrder = 0;
+    j=5;
+    for(let i=2; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+    inOrder = 0;
+    j=5;
+    for(let i=3; i < 7; i++)
+    {
+      
+      if(boardArr[i][j] == value)
+        {
+          inOrder++;
+          console.log(i);
+          console.log(j);
+          console.log(boardArr[i][j]);
+        }
+        else{
+          inOrder = 0;
+          console.log("erased");
+        }
+      if(inOrder == 4)
+      {
+        return(true);
+      }
+      j--;
+    }
+
+
+  return(false);
+  
 }
 
+
+
 function playTurn(col){
-  var parent = document.getElementById(col);
+  let parent = document.getElementById(col);
 
 
   // set color of disc based off current player
+  let color;
   if(turn)
   {
-    var color = "#df070d";
+    color = "#df070d";
   }
   else{
-    var color = "#f5ec0a";
+    color = "#f5ec0a";
   }
 
   // create the circle element, the disc
-  var disc = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+  let disc = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
   document.getElementById("gamesvg").appendChild(disc);
 
 
-  var yPos;
+  let yPos;
   // set x position of disc based off column clicked
   if(col == "colA")
   {
@@ -199,39 +526,54 @@ function playTurn(col){
     }
     
   }
-
-  // movement for disc, drop down, not working yet ;-;
-  /*var anime = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
-  disc.appendChild(anime);
-  anime.setAttribute("attributeName", "cy");
-  anime.setAttribute("from", "50");
-  //anime.setAttribute("to", "650");
-  anime.setAttribute("speed", "3s");
-  //anime.setAttribute("begin", "0s");
-  anime.setAttribute("fill", "freeze");
-
-  if(yPos == 0)
+  else{ // one wins
+    let player;
+    if(turn)
   {
-    anime.setAttribute("to", "650");
+    player= "Player 1";
   }
-  else if(yPos == 1)
-  {
-    anime.setAttribute("to", "550");
+  else{
+    player = "Player 2";
   }
-  else if(yPos == 2)
-  {
-    anime.setAttribute("to", "450");
+    window.alert("Game Over. " + player + " wins!");
+    window.location.reload();
   }
-  else if(yPos == 3)
-  {
-    anime.setAttribute("to", "350");
-  }
-  else if(yPos == 4)
-  {
-    anime.setAttribute("to", "250");
-  }
-  else if(yPos == 5)
-  {
-    anime.setAttribute("to", "150");
-  }*/
 }
+
+
+
+// movement for disc, drop down, not working yet ;-;
+/*let anime = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
+disc.appendChild(anime);
+anime.setAttribute("attributeName", "cy");
+anime.setAttribute("from", "50");
+//anime.setAttribute("to", "650");
+anime.setAttribute("speed", "3s");
+//anime.setAttribute("begin", "0s");
+anime.setAttribute("fill", "freeze");
+
+if(yPos == 0)
+{
+  anime.setAttribute("to", "650");
+}
+else if(yPos == 1)
+{
+  anime.setAttribute("to", "550");
+}
+else if(yPos == 2)
+{
+  anime.setAttribute("to", "450");
+}
+else if(yPos == 3)
+{
+  anime.setAttribute("to", "350");
+}
+else if(yPos == 4)
+{
+  anime.setAttribute("to", "250");
+}
+else if(yPos == 5)
+{
+  anime.setAttribute("to", "150");
+}
+*/
