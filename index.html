@@ -15,7 +15,7 @@
     
   <!--<canvas id="board" width="400" height="400" style="border: 1px solid black;"></canvas>--> 
   <div>
-   <svg id="gamesvg" width="700" height="700" style="border: solid 3px black;">
+   <svg id="gamesvg" width="700" height="700" style="border: solid 3px black; background-color: #b8b8b8;">
        <!--horizontal lines-->
        <line x1="0" y1="100" x2="700" y2="100" style="stroke: black;stroke-width:2;"></line>
        <line x1="0" y1="200" x2="700" y2="200" style="stroke: black;stroke-width:1;"></line>
@@ -31,27 +31,28 @@
        <line x1="500" y1="100" x2="500" y2="700" style="stroke: black;stroke-width:1;"></line>
        <line x1="600" y1="100" x2="600" y2="700" style="stroke: black;stroke-width:1;"></line>
 
-            <circle class="ghost" id="colA" cx="50" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(1)">
-               <animate attributeName="cy" from="50" to="150" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colA" cx="50" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colA')">
+                
             </circle>
-            <circle class="ghost" id="colB" cx="150" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(2)">
-                <animate attributeName="cy" from="50" to="250" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colB" cx="150" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colB')">
+               <!-- <animate attributeName="cy" from="50" to="250" dur="1s"  begin="click" fill="freeze"/>-->
             </circle>
-            <circle class="ghost" id="colC" cx="250" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(3)">
-                <animate attributeName="cy" from="50" to="350" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colC" cx="250" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colC')">
+                <!--<animate attributeName="cy" from="50" to="350" dur="1s" begin="click" fill="freeze"/>-->
             </circle>
-            <circle class="ghost" id="colD" cx="350" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(4)">
-             <animate attributeName="cy" from="50" to="450" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colD" cx="350" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colD')">
+             <!--<animate attributeName="cy" from="50" to="450" dur="1s" begin="click" fill="freeze"/>-->
             </circle>
-            <circle class="ghost" id="colE" cx="450" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(5)">
-                <animate attributeName="cy" from="50" to="550" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colE" cx="450" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colE')">
+                <!--<animate attributeName="cy" from="50" to="550" dur="1s" begin="click" fill="freeze"/>-->
             </circle>
-            <circle class="ghost" id="colF" cx="550" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(6)">
-             <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colF" cx="550" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colF')">
+             <!--<animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>-->
             </circle>
-            <circle class="ghost" id="colG" cx="650" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn(7)">
-                <animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>
+            <circle class="ghost" id="colG" cx="650" cy="50" r="40" stroke="#ff898a" fill="#ff898a" onclick="return playTurn('colG')">
+                <!--<animate attributeName="cy" from="50" to="650" dur="1s" begin="click" fill="freeze"/>-->
             </circle>
+
 
    </svg></div>
 
@@ -59,5 +60,4 @@
    
 </body>
 <script src="connect4.js"></script>
-<script src="snap.svg-min.js"></script>
 </html>
