@@ -52,17 +52,32 @@ function addToBoard(col){
     var player = 2;
   }
 
+
+var j;
   //check to see what is already in arrays and add where it is empty.
-  for(var j = 0; j < 6; j++)
+  outerloop: for(j = 0; j < 6; j++)
   {
+    console.log("i out =" + i);
+    console.log("j out =" + j);
+    console.log("value out =" + boardArr[i][j]);
+    console.table(boardArr);
     if(boardArr[i][j] == 0)
     {
+      console.log("value =" + boardArr[i][j]);
+      console.log("i =" + i);
+      console.log("j =" + j);
       boardArr[i][j] = player;
-      break;
+      // for testing
+      console.table(boardArr);
+
+      //returns the y position to assign to circle element
+      break outerloop;
     }
   }
 
-  console.table(boardArr);
+  return(j);
+
+
 }
 
 function playTurn(col){
@@ -91,44 +106,70 @@ function playTurn(col){
   var disc = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
   document.getElementById("gamesvg").appendChild(disc);
 
+  var yPos;
   // set x position of disc based off column clicked
   if(col == "colA")
   {
     disc.setAttribute("cx", "50");
-    addToBoard("colA");
+    yPos = addToBoard("colA");
   }
   else if(col == "colB")
   {
     disc.setAttribute("cx", "150");
-    addToBoard("colB");
+    yPos = addToBoard("colB");
   }
   else if(col == "colC")
   {
     disc.setAttribute("cx", "250");
-    addToBoard("colC");
+    yPos = addToBoard("colC");
   }
   else if(col == "colD")
   {
     disc.setAttribute("cx", "350");
-    addToBoard("colD");
+    yPos = addToBoard("colD");
   }
   else if(col == "colE")
   {
     disc.setAttribute("cx", "450");
-    addToBoard("colE");
+    yPos = addToBoard("colE");
   }
   else if(col == "colF")
   {
     disc.setAttribute("cx", "550");
-    addToBoard("colF");
+    yPos = addToBoard("colF");
   }
   else if(col == "colG")
   {
     disc.setAttribute("cx", "650");
-    addToBoard("colG");
+    yPos = addToBoard("colG");
   }
 
-  disc.setAttribute("cy","650");
+  // assign y position to circle element
+  if(yPos == 0)
+  {
+    disc.setAttribute("cy", "650");
+  }
+  else if(yPos == 1)
+  {
+    disc.setAttribute("cy", "550");
+  }
+  else if(yPos == 2)
+  {
+    disc.setAttribute("cy", "450");
+  }
+  else if(yPos == 3)
+  {
+    disc.setAttribute("cy", "350");
+  }
+  else if(yPos == 4)
+  {
+    disc.setAttribute("cy", "250");
+  }
+  else if(yPos == 5)
+  {
+    disc.setAttribute("cy", "150");
+  }
+
   disc.setAttribute("r","40");
   disc.setAttribute("fill",color);
   disc.setAttribute("stroke",color);
