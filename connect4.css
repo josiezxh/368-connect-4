@@ -1,17 +1,30 @@
 body{
     text-align: center;
-    padding: 50px;
+
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(assests/con4nect.png);
 }
 
 div.turn{
-text-align: center;
+    text-align: center;
     border: 2px solid black;
     max-width: fit-content;
     padding: 20px;
     font-size: 150%;
     margin: auto;
     margin-bottom: 20px;
+    background-color: #ff898a;
+}
+
+div.main{
+    text-align: center;
+    border: 2px solid black;
+    max-width: fit-content;
+    padding: 20px;
+    font-size: 150%;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
 }
 
 span.currentTurn{

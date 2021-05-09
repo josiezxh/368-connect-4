@@ -87,10 +87,10 @@ function playTurn(col){
   // set color of disc based off current player
   if(turn)
   {
-    var color = "#ff383a";
+    var color = "#df070d";
   }
   else{
-    var color = "#00a0ff";
+    var color = "#f5ec0a";
   }
 
   // create the circle element, the disc
@@ -177,26 +177,30 @@ function playTurn(col){
     {
       //change color of the discs
       document.querySelectorAll(".ghost").forEach(x => {
-        x.setAttribute("fill", "#ff898a");
-        x.setAttribute("stroke", "#ff898a");
+        x.setAttribute("fill", "#ef8386");
+        x.setAttribute("stroke", "#ef8386");
       });
 
+      // change current player text and bg color
       document.querySelector(".currentTurn").innerHTML = "Player 1's";
+      document.querySelector(".turn").style.backgroundColor= "#ef8386";
     }
     else
     {
       //change color of the discs
       document.querySelectorAll(".ghost").forEach(x => {
-        x.setAttribute("fill", "#cfeafa");
-        x.setAttribute("stroke", "#cfeafa");
+        x.setAttribute("fill", "#faf584");
+        x.setAttribute("stroke", "#faf584");
       });
 
+      // change current player text and bg color
       document.querySelector(".currentTurn").innerHTML = "Player 2's";
+      document.querySelector(".turn").style.backgroundColor= "#faf584";
     }
     
   }
 
-  // movement for disc, drop down, not working yet
+  // movement for disc, drop down, not working yet ;-;
   /*var anime = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
   disc.appendChild(anime);
   anime.setAttribute("attributeName", "cy");
