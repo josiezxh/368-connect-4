@@ -57,10 +57,6 @@ var j;
   //check to see what is already in arrays and add where it is empty.
   outerloop: for(j = 0; j < 6; j++)
   {
-    console.log("i out =" + i);
-    console.log("j out =" + j);
-    console.log("value out =" + boardArr[i][j]);
-    console.table(boardArr);
     if(boardArr[i][j] == 0)
     {
       console.log("value =" + boardArr[i][j]);
@@ -80,18 +76,13 @@ var j;
 
 }
 
+function winCheck(){
+ return(false);
+}
+
 function playTurn(col){
   var parent = document.getElementById(col);
-  /*var anime = document.createElement("animate");
-  disc.appendChild(anime);
-  anime.id='newAnimation';
-  var move = document.getElementById('newAnimation');
-  move.setAttribute("attributeName", "cy");
-  move.setAttribute("from", "50");
-  move.setAttribute("to", "150");
-  move.setAttribute("dur", "1s");
-  move.setAttribute("begin", "0s");
-  move.setAttribute("fill", "freeze");*/
+
 
   // set color of disc based off current player
   if(turn)
@@ -105,6 +96,7 @@ function playTurn(col){
   // create the circle element, the disc
   var disc = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
   document.getElementById("gamesvg").appendChild(disc);
+
 
   var yPos;
   // set x position of disc based off column clicked
@@ -174,4 +166,68 @@ function playTurn(col){
   disc.setAttribute("fill",color);
   disc.setAttribute("stroke",color);
 
+  // check for win
+  if(!winCheck()) // if no wins
+  {
+    //change the turn
+    turn = !turn;
+
+    //change colors and text depending on current player
+    if(turn)
+    {
+      //change color of the discs
+      document.querySelectorAll(".ghost").forEach(x => {
+        x.setAttribute("fill", "#ff898a");
+        x.setAttribute("stroke", "#ff898a");
+      });
+
+      document.querySelector(".currentTurn").innerHTML = "Player 1's";
+    }
+    else
+    {
+      //change color of the discs
+      document.querySelectorAll(".ghost").forEach(x => {
+        x.setAttribute("fill", "#cfeafa");
+        x.setAttribute("stroke", "#cfeafa");
+      });
+
+      document.querySelector(".currentTurn").innerHTML = "Player 2's";
+    }
+    
+  }
+
+  // movement for disc, drop down, not working yet
+  /*var anime = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
+  disc.appendChild(anime);
+  anime.setAttribute("attributeName", "cy");
+  anime.setAttribute("from", "50");
+  //anime.setAttribute("to", "650");
+  anime.setAttribute("speed", "3s");
+  //anime.setAttribute("begin", "0s");
+  anime.setAttribute("fill", "freeze");
+
+  if(yPos == 0)
+  {
+    anime.setAttribute("to", "650");
+  }
+  else if(yPos == 1)
+  {
+    anime.setAttribute("to", "550");
+  }
+  else if(yPos == 2)
+  {
+    anime.setAttribute("to", "450");
+  }
+  else if(yPos == 3)
+  {
+    anime.setAttribute("to", "350");
+  }
+  else if(yPos == 4)
+  {
+    anime.setAttribute("to", "250");
+  }
+  else if(yPos == 5)
+  {
+    anime.setAttribute("to", "150");
+  }*/
 }
