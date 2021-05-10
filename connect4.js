@@ -80,7 +80,13 @@ let j;
 function winCheck(){
   let inOrder = 0;
 
-  let value = 1;
+    if(turn)
+    {
+     value = 1;
+    }
+    else{
+      value = 2;
+    }
     //check vertically
     for(let i=0; i < 7; i++) //col
     {
@@ -529,12 +535,12 @@ function playTurn(col){
   else{ // one wins
     let player;
     if(turn)
-  {
-    player= "Player 1";
-  }
-  else{
-    player = "Player 2";
-  }
+    {
+      player= "Player 1";
+    }
+    else{
+      player = "Player 2";
+    }
     window.alert("Game Over. " + player + " wins!");
     window.location.reload();
   }
